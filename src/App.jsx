@@ -1,6 +1,8 @@
 import React,{useState,useRef,useEffect} from "react";
 import TareaList from "./componentes/TareaList";
 import { v4 as uuidv4 } from "uuid";
+import Button from 'react-bootstrap/Button'
+
 
 const KEY = "tareasApp.tareas"
 
@@ -49,6 +51,7 @@ useEffect (()=>{
          <>
         <TareaList tareas={tareas} ToggleTarea={ToggleTarea}/>
         <input ref={TodoTaskRef} type="text" placeholder="nueva tarea"/>
+      
         <button onClick={todoAdd}>+</button>
         <button onClick={ClearAll}>eliminar tarea terminadas</button>
         <div>Te quedan {tareas.filter((tarea)=>!tarea.completed).length} tareas por terminar</div>
